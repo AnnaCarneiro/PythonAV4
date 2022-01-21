@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Listar Personagens</title>
+
+    <!-- Css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mt-2">
+
+            <img src="iconepessoa.png" height="60px" class="navbar-brand rounded-circle">
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-nav mr-auto">
+                    <span class="navbar-text">Sistema de Cadastro de Personagens do Mauricio de Souza</span>
+
+                    <a class="nav-item nav-link" href="#" id="linkInicio">Início<span
+                            class="sr-only">(current)</span></a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Cadastros
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#" id="linkListarPessoas">Pessoas</a>
+                            <a class="dropdown-item" href="#">Relação</a>
+                            <a class="dropdown-item" href="#">Caracteristicas</a>
+                            <a class="dropdown-item" href="#">Brincadeiras</a>
+                            <a class="dropdown-item" href="#">Especialidade</a>
+                            <a class="dropdown-item" href="#">Pet</a>
+                            <a class="dropdown-item" href="#">Pai</a>
+                            <a class="dropdown-item" href="#">Mãe</a>
+                            <a class="dropdown-item" href="#">Vestimentas</a>
+                            <a class="dropdown-item" href="#">Personagens</a>
+                        </div>
+                    </li>
+
+
+
+                </div>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </nav>
+
+
+        <div id="Pagina">
+
+            <div id="inicio">
+                Personagens Mauricio de Souza.
+            </div>
+
+            <!--inclusão de pessoa -->
+            <div class="modal fade" id="modalIncluirPessoa" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Incluir pessoa</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="campoNome">Nome</label>
+                                    <input type="text" class="form-control" id="campoNome" aria-describedby="nomeHelp"
+                                        placeholder="Nome">
+                                    <small id="nomeHelp" class="form-text text-muted">Informe o nome.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="campoSobrenome">Sobrenome</label>
+                                    <input type="text" class="form-control" id="campoSobrenome"
+                                        aria-describedby="sobrenomeHelp" placeholder="Sobrenome">
+                                    <small id="sobrenomeHelp" class="form-text text-muted">Informe o sobrenome
+                                        .</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="campoEmail">Email</label>
+                                    <input type="text" class="form-control" id="campoEmail" aria-describedby="EmailHelp"
+                                        placeholder="Email">
+                                    <small id="EmailHelp" class="form-text text-muted">Informe seu
+                                        email.</small>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button id="btIncluirPessoa" type="button" class="btn btn-primary">Incluir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- janela modal de inclusão de Relação -->
+            <div class="modal fade" id="modalRelacao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Incluir Relação</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="campoNome">Nome</label>
+                                    <input type="text" class="form-control" id="campoNome" aria-describedby="nomeHelp"
+                                        placeholder="Nome">
+                                    <small id="nomeHelp" class="form-text text-muted">Informe o nome.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="campoRelacao">Tipo de Relação</label>
+                                    <input type="text" class="form-control" id="campoFuncao"
+                                        aria-describedby="RelacaoHelp" placeholder="Relacao">
+                                    <small id="RelacaoHelp" class="form-text text-muted">Informe o tipo de relação e
+                                        com qual personagem.</small>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button id="btIncluirRelacao" type="button" class="btn btn-primary">Incluir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- janela modal de inclusão de Caracteristicas -->
+            <div class="modal fade" id="modalCaracteristicas" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Incluir Caracteristicas</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="campoNome">Nome</label>
+                                    <input type="text" class="form-control" id="campoNome" aria-describedby="nomeHelp"
+                                        placeholder="Nome">
+                                    <small id="nomeHelp" class="form-text text-muted">Informe o nome.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="campoCorOlhos">Cor dos Olhos</label>
+                                    <input type="text" class="form-control" id="campoCorOlhos"
+                                        aria-describedby="corOlhosHelp" placeholder="Cor dos Olhos">
+                                    <small id="CorOlhosHelp" class="form-text text-muted">Informe a dos olhos
+                                        do personagem.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="campoCorCabelo">Cor do Cabelo</label>
+                                    <input type="text" class="form-control" id="campoCorCabelo"
+                                        aria-describedby="CorCabeloHelp" placeholder="Cor do Cabelo">
+                                    <small id="CorCabeloHelp" class="form-text text-muted">Informe a cor do cabelo
+                                        do personagem.</small>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button id="btIncluirCaracteristicas" type="button" class="btn btn-primary">Incluir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- janela modal de inclusão de Brincadeiras -->
+            <div class="modal fade" id="modalBrincadeiras" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Incluir Brincadeira</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="campoNome">Nome</label>
+                                    <input type="text" class="form-control" id="campoNome" aria-describedby="nomeHelp"
+                                        placeholder="Nome">
+                                    <small id="nomeHelp" class="form-text text-muted">Informe nome da
+                                        brincadeira</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="campoDescricao">Descrição</label>
+                                    <input type="text" class="form-control" id="campoDescricao"
+                                        aria-describedby="DescricaoHelp" placeholder="Descrição">
+                                    <small id="DescricaoHelp" class="form-text text-muted">Informe a descrição da
+                                        Brincadeira.</small>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button id="btIncluirBrincadeiras" type="button" class="btn btn-primary">Incluir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- janela modal de inclusão de Especialidade -->
+            <div class="modal fade" id="modalEspecialidade" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Incluir Especialidade</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="campoNome">Nome</label>
+                                    <input type="text" class="form-control" id="campoNome" aria-describedby="nomeHelp"
+                                        placeholder="Nome">
+                                    <small id="nomeHelp" class="form-text text-muted">Informe o nome.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="campoDescricao">Descrição</label>
+                                    <input type="text" class="form-control" id="campoDescricao"
+                                        aria-describedby="DescricaoHelp" placeholder="Descrição">
+                                    <small id="DescricaoHelp" class="form-text text-muted">Informe a descrição da
+                                        especialidade do persoagem.</small>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button id="btIncluirEspecialidade" type="button" class="btn btn-primary">Incluir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- janela modal de inclusão de Pet -->
+            <div class="modal fade" id="modalPets" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Incluir Pet</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="campoNome">Nome</label>
+                                    <input type="text" class="form-control" id="campoNome" aria-describedby="nomeHelp"
+                                        placeholder="Nome">
+                                    <small id="nomeHelp" class="form-text text-muted">Informe o nome do Pet.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="campoDescricao">Descrição</label>
+                                    <input type="text" class="form-control" id="campoDescricao"
+                                        aria-describedby="DescricaoHelp" placeholder="Descrição">
+                                    <small id="DescricaoHelp" class="form-text text-muted">Informe a descrição/tipo do pet e
+                                         qual personagem pertence.</small>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button id="btIncluirPet" type="button" class="btn btn-primary">Incluir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- janela modal de inclusão de Pai -->
+            <div class="modal fade" id="modalPai" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Incluir Pet</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="campoNome">Nome</label>
+                                <input type="text" class="form-control" id="campoNome" aria-describedby="nomeHelp"
+                                    placeholder="Nome">
+                                <small id="nomeHelp" class="form-text text-muted">Informe o nome do Pai.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="campoDescricao">Descrição</label>
+                                <input type="text" class="form-control" id="campoDescricao"
+                                    aria-describedby="DescricaoHelp" placeholder="Descrição">
+                                <small id="DescricaoHelp" class="form-text text-muted">Informe pai de qual personagem e
+                                    uma breve descrição.</small>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button id="btIncluirPai" type="button" class="btn btn-primary">Incluir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- janela modal de inclusão de Mãe -->
+            <div class="modal fade" id="modalMae" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Incluir Mãe</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="campoNome">Nome</label>
+                                <input type="text" class="form-control" id="campoNome" aria-describedby="nomeHelp"
+                                    placeholder="Nome">
+                                <small id="nomeHelp" class="form-text text-muted">Informe o nome da Mãe.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="campoDescricao">Descrição</label>
+                                <input type="text" class="form-control" id="campoDescricao"
+                                    aria-describedby="DescricaoHelp" placeholder="Descrição">
+                                <small id="DescricaoHelp" class="form-text text-muted">Informe de qual personagem é a mãe
+                                    e uma breve descrição.</small>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button id="btIncluirMae" type="button" class="btn btn-primary">Incluir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            <!-- janela modal de inclusão de Vestimenta -->
+            <div class="modal fade" id="modalVestimenta" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Incluir Mãe</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="campoNome">Nome</label>
+                                <input type="text" class="form-control" id="campoNome" aria-describedby="nomeHelp"
+                                    placeholder="Nome">
+                                <small id="nomeHelp" class="form-text text-muted">Informe o nome.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="campoDescricao">Descrição</label>
+                                <input type="text" class="form-control" id="campoDescricao"
+                                    aria-describedby="DescricaoHelp" placeholder="Descrição">
+                                <small id="DescricaoHelp" class="form-text text-muted">Informe a descrição da vestimenta
+                                    do personagem.</small>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button id="btIncluirVestimenta type="button" class="btn btn-primary">Incluir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- janela modal de inclusão de Personagens -->
+            <div class="modal fade" id="modalPersonagem" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Incluir Personagens</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="campoNome">Nome</label>
+                                    <input type="text" class="form-control" id="campoNome"
+                                        aria-describedby="NomeHelp" placeholder="Nome">
+                                    <small id="NomeHelp" class="form-text text-muted">Informe o nome.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="campoIdade">Idade</label>
+                                    <input type="text" class="form-control" id="campoIdade"
+                                        aria-describedby="IdadeHelp" placeholder="Idade">
+                                    <small id="IdadeHelp" class="form-text text-muted">Informe a idade
+                                        do personagem. </small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="campoIAltura">Altura</label>
+                                    <input type="text" class="form-control" id="campoAltura"
+                                        aria-describedby="AlturaHelp" placeholder="Altura">
+                                    <small id="AlturaHelp" class="form-text text-muted">Informe a altura o personagem
+                                        em metros.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="campoIEspecialidade">Especialidade</label>
+                                    <input type="text" class="form-control" id="campoEspecialidade"
+                                        aria-describedby="EspecialidadeHelp" placeholder="Especialidade">
+                                    <small id="EspecialidadeHelp" class="form-text text-muted">Informe a especialidade o personagem
+                                        .</small>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button id="btIncluirPersonagem" type="button" class="btn btn-primary">Incluir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container" id="cadastroPessoas">
+                <h5><strong>Cadastro de Pessoas</strong></h5>
+
+                <!-- link que abre formulário de inclusão de pessoas -->
+                <a class="nav-item nav-link" data-toggle="modal" data-target="#modalIncluirPessoa" href="#"><img
+                        src="plus.jpg" width="20" height="20" title="Incluir pessoa"></a>
+
+                <!-- tabela de listagem de pessoas -->
+                <table class="table table-striped table-hover" id="tabelaPessoas">
+                    <thead>
+                        <!-- primeira linha da tabela: títulos -->
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Sobrenome</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaPessoas">
+                        <!-- aqui serão exibidas as pessoas -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="container" id="cadastroRelacao">
+                <h5><strong>Cadastro de Relação dos Personagens</strong></h5>
+
+                <a class="nav-item nav-link" data-toggle="modal" data-target="#modalRelacao" href="#"><img
+                        src="plus.jpg" width="20" height="20" title="Incluir Relacao"></a>
+
+                <table class="table table-striped table-hover" id="tabelaRelacao">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Tipo de Relação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaRelacao">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="container" id="cadastroCaracteristicas">
+                <h5><strong>Cadastro das Características dos Personagens</strong></h5>
+
+                <a class="nav-item nav-link" data-toggle="modal" data-target="#modalCaracteristicas" href="#"><img
+                        src="plus.jpg" width="20" height="20" title="Incluir Características"></a>
+
+                <table class="table table-striped table-hover" id="tabelaCaracteristicas">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Cor dos Olhos</th>
+                            <th scope="col">Cor do Cabelo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaCaracteristicas">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="container" id="cadastroBrincadeiras">
+                <h5><strong>Cadastro das Brincadeiras Favoritas</strong></h5>
+
+                <a class="nav-item nav-link" data-toggle="modal" data-target="#modalBrincadeiras" href="#"><img
+                        src="plus.jpg" width="20" height="20" title="Incluir Brincadeiras"></a>
+
+                <table class="table table-striped table-hover" id="tabelaBrincadeiras">
+                    <thead>
+                        <tr>
+                            <th scope="col">Brincadeira</th>
+                            <th scope="col">Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaBrincadeiras">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="container" id="cadastroEspecialidades">
+                <h5><strong>Cadastro das Especialidades dos Personagens</strong></h5>
+
+                <a class="nav-item nav-link" data-toggle="modal" data-target="#modalEspecialidade" href="#"><img
+                        src="plus.jpg" width="20" height="20" title="Incluir Especialidade"></a>
+
+                <table class="table table-striped table-hover" id="tabelaEspecialidades">
+                    <thead>
+                        <tr>
+                            <th scope="col">Especialidade</th>
+                            <th scope="col">Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaEspecialidades">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="container" id="cadastroPets">
+                <h5><strong>Cadastro dos Pets dos Personagens</strong></h5>
+
+                <a class="nav-item nav-link" data-toggle="modal" data-target="#modalPets" href="#"><img src="plus.jpg"
+                        width="20" height="20" title="Incluir Pet"></a>
+
+                <table class="table table-striped table-hover" id="tabelaPets">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Tipo / Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaPets">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="container" id="cadastroPai">
+                <h5><strong>Cadastro dos Pais dos Personagens</strong></h5>
+
+                <a class="nav-item nav-link" data-toggle="modal" data-target="#modalPai" href="#"><img src="plus.jpg"
+                        width="20" height="20" title="Incluir Pai"></a>
+
+                <table class="table table-striped table-hover" id="tabelaPai">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaPai">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="container" id="cadastroMae">
+                <h5><strong>Cadastro das Mães dos Personagens</strong></h5>
+
+                <a class="nav-item nav-link" data-toggle="modal" data-target="#modalMae" href="#"><img src="plus.jpg"
+                        width="20" height="20" title="Incluir Mae"></a>
+
+                <table class="table table-striped table-hover" id="tabelaMae">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaMae">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="container" id="cadastroVestimenta">
+                <h5><strong>Cadastro de Vestimentas dos Personagens</strong></h5>
+
+                <a class="nav-item nav-link" data-toggle="modal" data-target="#modalVestimenta" href="#"><img
+                        src="plus.jpg" width="20" height="20" title="Incluir Vestimenta"></a>
+
+                <table class="table table-striped table-hover" id="tabelaVestimenta">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Descrição da Vestimenta</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaVestimenta">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="container" id="cadastroPersonagens">
+                <h5><strong>Cadastro de Personagens</strong></h5>
+
+                <a class="nav-item nav-link" data-toggle="modal" data-target="#modalPersonagem" href="#"><img
+                        src="plus.jpg" width="20" height="20" title="Incluir Personagens"></a>
+
+                <table class="table table-striped table-hover" id="tabelaPersonagem">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Idade</th>
+                            <th scope="col">Altura</th>
+                            <th scope="col">Especialidade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaPersonagem">
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Script do jQuery, Popper.js e Bootstrap JS --->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <!--Código do front-->
+    <script src="meuscript.js"></script>
+
+</body>
+
+</html>
